@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import DropDown from './DropDown';
+import CamsList from './CamsList';
 
 class Countries extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Countries extends Component {
     this.state = {
       countriesList: [],
       selectedCountry: '',
+      camsList: [],
     };
   }
 
@@ -27,10 +29,24 @@ class Countries extends Component {
   handleChange = (event) => {
     const { value } = event.target;
     this.setState({ selectedCountry: value });
+    this.getCamsList(value);
+  };
+
+  getCamsList = (countryId) => {
+    const url = `https://api.windy.com/api/webcams/v2/list/country=${countryId}?key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym`;
+    if (countryId !== 'default') {
+      axios
+        .get(url)
+        .then((response) => response.data.result.webcams)
+        .then((camsData) => this.setState({ camsList: camsData }));
+    } else {
+      this.setState({ camsList: [] });
+    }
   };
 
   render() {
-    const { countriesList, selectedCountry } = this.state;
+    const { countriesList, selectedCountry, camsList } = this.state;
+
     return (
       <div>
         <div>Countries Page</div>
@@ -38,6 +54,9 @@ class Countries extends Component {
           countriesList={countriesList}
           handleChange={this.handleChange}
         />
+        {camsList.map((cam) => (
+          <CamsList key={cam.id} name={cam.title} />
+        ))}
       </div>
     );
   }

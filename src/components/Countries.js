@@ -2,7 +2,7 @@ import React from 'react';
 
 function Countreis() {
     return(
-        <div />
+        <div>Countries Page</div>
     );
 }
 

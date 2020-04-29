@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Homepage from './components/Homepage';
+import Categories from './components/Categories';
+import Countries from './components/Countries';
+import WebcamPage from './components/WebcamPage';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Homepage} />
+          <Route path="/categories" component={Categories} />
+          <Route path="/countries" component={Countries} />
+          <Route path="/webcamPage" component={WebcamPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

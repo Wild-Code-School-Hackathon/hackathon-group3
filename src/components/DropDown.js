@@ -7,7 +7,7 @@ function DropDown(props) {
             <select onChange={handleChange}>
                 {countriesList.map(country => (
                     <option 
-                key={country.id} value={country.name}>{country.name}</option>
+                key={country.id} value={country.id}>{country.name}</option>
                 ))}
             </select>
         </div>

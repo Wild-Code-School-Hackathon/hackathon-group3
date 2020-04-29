@@ -8,22 +8,25 @@ a {
 }
 
 /******* NAVBAR *******/
-.nav {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid black;
-  padding: 20px 30px;
+.Nav {
+  background-color: #5e677a;
 }
 
-.nav img{
-  height: 30px;
+.logo {
+  width: 150px;
+  margin: 20px;
 }
 
-.logo,
-.country,
-.category{
-  margin: auto 30px;
+.country {
+  width: 125px;
+  margin: 20px;
 }
+
+.category {
+  width: 125px;
+  margin: 20px;
+}
+
 
 .App {}
 

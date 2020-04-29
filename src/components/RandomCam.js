@@ -58,7 +58,6 @@ getRandomCam = () => {
             </div>
         );
     } 
-    
 }
 
 export default RandomCam;

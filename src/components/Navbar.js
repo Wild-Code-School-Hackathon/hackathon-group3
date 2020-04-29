@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="nav">
+    <nav className="Nav">
       <Link to="/">
         <img
           className="logo"
@@ -11,7 +11,6 @@ function Navbar() {
           alt="logo"
         />
       </Link>
-      <div className="nav-items">
         <Link to="/countries">
             <img
              className="country"
@@ -27,7 +26,6 @@ function Navbar() {
             alt="catergory"
           />
         </Link>
-      </div>  
     </nav>
   );
 }

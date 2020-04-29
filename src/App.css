@@ -3,6 +3,30 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+/******* NAVBAR *******/
+.Nav {
+  background-color: #5e677a;
+}
+
+.logo {
+  width: 150px;
+  margin: 20px;
+}
+
+.country {
+  width: 125px;
+  margin: 20px;
+}
+
+.category {
+  width: 125px;
+  margin: 20px;
+}
+
 .App {
 }
 

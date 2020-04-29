@@ -2,7 +2,7 @@ import React from 'react';
 
 function WebcamPage() {
     return(
-        <div />
+        <div>Webcam Page</div>
     );
 }
 

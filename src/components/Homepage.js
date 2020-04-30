@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 
 function Homepage() {
   return (
-    <div>
-      <div className='Homepage-bg-img'>bg img stand-in</div>
-      <div className='Homepage-card-container'>
-        <Link to='/countries'>
-          <div className='Homepage-countries-card'>
+    <div className='home-container'>
+      <div className='home-bg-img'></div>
+      <div className='home-card-container'>
+        <Link to='/countries' className='home-countries'>
+          <div>
             <h3>Countries</h3>
           </div>
         </Link>
-        <Link to='/categories'>
-          <div className='Homepage-categories-card'>
+        <Link to='/categories' className='home-categories'>
+          <div>
             <h3>Categories</h3>
           </div>
         </Link>

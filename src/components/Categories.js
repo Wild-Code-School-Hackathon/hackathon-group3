@@ -55,66 +55,11 @@ class Categories extends Component {
         {camsList.map((cam) => (
           <CamsList key={cam.id} name={cam.title} />
         ))}
-        <div className="cards-wrapper">
-          <div className="card">
-            <img
-              className="country-card"
-              src="https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt="Beach"
-              onClick={() => this.getCamsList('beach')}
-            />
-          </div>
-
-          <div className="card">
-            <img
-              className="country-card"
-              src="https://images.pexels.com/photos/1097491/pexels-photo-1097491.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt="Mountain"
-              onClick={() => this.getCamsList('mountain')}
-            />
-          </div>
-
-          <div className="card">
-            <img
-              className="country-card"
-              src="https://images.pexels.com/photos/2214035/pexels-photo-2214035.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt="City"
-              onClick={() => this.getCamsList('city')}
-            />
-          </div>
-          <div className="card">
-            <img
-              className="country-card"
-              src="https://images.pexels.com/photos/1784577/pexels-photo-1784577.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt="Forest"
-              onClick={() => this.getCamsList('forest')}
-            />
-          </div>
-          <div className="card">
-            <img
-              className="country-card"
-              src="https://images.pexels.com/photos/240526/pexels-photo-240526.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt="Island"
-              onClick={() => this.getCamsList('island')}
-            />
-          </div>
-          <div className="card">
-            <img
-              className="country-card"
-              src="https://images.pexels.com/photos/910307/pexels-photo-910307.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              onClick={() => this.getCamsList('lake')}
-              alt="Lake"
-            />
-          </div>
-        </div>
       </div>
     );
   }
 }
 
 export default Categories;
-<<<<<<< HEAD
-=======
 
-
->>>>>>> cc6da085caa6725ef53d5954a24f508b82e6250d
+// beach mountain city forest island lake

@@ -19,7 +19,7 @@ class Countries extends Component {
       .get(url)
       .then((response) => response.data.result.countries)
       .then((countriesData) => {
-        const defaultOpt = { id: 'default', name: 'Please chose a country' };
+        const defaultOpt = { id: 'default', name: 'Please choose a country' };
         const updatedCountries = [defaultOpt, ...countriesData];
         this.setState({ countriesList: updatedCountries });
       });
@@ -49,7 +49,7 @@ class Countries extends Component {
       <div>
         <div>Countries Page</div>
         <DropDown
-          countriesList={countriesList}
+          optionsList={countriesList}
           handleChange={this.handleChange}
         />
         {camsList.map((cam) => (

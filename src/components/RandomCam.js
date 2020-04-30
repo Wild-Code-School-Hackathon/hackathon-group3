@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 function randomNum(num) {
   return Math.floor(Math.random() * num);
@@ -58,9 +57,6 @@ class RandomCam extends Component {
       <div className='random-cam'>
         <h3 className='rc-text'>Random Cam</h3>
         <iframe src={randomCam} title='random cam' allow='autoplay' />
-        <button onClick={this.selectCam}>
-          <Link to='/WebcamPage'>go to radom cam</Link>
-        </button>
       </div>
     );
   }

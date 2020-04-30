@@ -42,6 +42,17 @@ class Countries extends Component {
     }
   };
 
+  selectCam = (id) => {
+    const selectedCamId = id;
+    const { history } = this.props;
+    history.push({
+      pathname: '/webcamPage',
+      state: {
+        camId: selectedCamId,
+      },
+    });
+  }
+
   render() {
     const { countriesList, camsList } = this.state;
     return (
@@ -52,7 +63,7 @@ class Countries extends Component {
           handleChange={this.handleChange}
         />
         {camsList.map((cam) => (
-          <CamsList key={cam.id} name={cam.title} />
+          <CamsList key={cam.id} name={cam.title} id={cam.id} selectCam={this.selectCam} />
         ))}
         <h3>Suggested Countries</h3>
         <div className='cards-wrapper'>

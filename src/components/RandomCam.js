@@ -54,16 +54,15 @@ class RandomCam extends Component {
       });
   };
 
+  
+
     render() {
-        const { randomCam, randomCamId } = this.state;
-        console.log(randomCamId)
+        const { randomCam } = this.state;
         return(
             <div>
               <h3>Random Cam</h3>
                 <iframe src={randomCam} title='random cam' allow='autoplay'/>
-              <Link to="/WebcamPage">
-                <button>go to radom cam</button>
-              </Link>     
+                <button onClick={this.selectCam}><Link to="/WebcamPage">go to radom cam</Link></button>
             </div>
         );
     } 

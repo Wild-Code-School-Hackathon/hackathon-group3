@@ -42,6 +42,17 @@ class Categories extends Component {
     }
   };
 
+  selectCam = (id) => {
+    const selectedCamId = id;
+    const { history } = this.props;
+    history.push({
+      pathname: '/webcamPage',
+      state: {
+        camId: selectedCamId,
+      },
+    });
+  }
+
   render() {
     const { categoriesList, camsList } = this.state;
 
@@ -53,7 +64,7 @@ class Categories extends Component {
           handleChange={this.handleChange}
         />
         {camsList.map((cam) => (
-          <CamsList key={cam.id} name={cam.title} />
+          <CamsList key={cam.id} name={cam.title} id={cam.id} selectCam={this.selectCam} />
         ))}
       </div>
     );

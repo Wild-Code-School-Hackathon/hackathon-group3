@@ -27,13 +27,22 @@ a {
   margin: 20px;
 }
 
+.country-card {
+  width: 300px;
+  margin: 20px;
+}
 
-.App {}
+.App {
+}
 
-.Homepage-bg-img {}
+.Homepage-bg-img {
+}
 
-.Homepage-card-container {}
+.Homepage-card-container {
+}
 
-.Homepage-countries-card {}
+.Homepage-countries-card {
+}
 
-.Homepage-categories-card {}
+.Homepage-categories-card {
+}

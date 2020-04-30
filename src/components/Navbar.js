@@ -7,25 +7,25 @@ function Navbar() {
       <Link to="/">
         <img
           className="logo"
-          src="https://i.imgur.com/ZXdCWLR.png"
+          src="https://i.imgur.com/Ztx2I7m.png"
           alt="logo"
         />
       </Link>
-        <Link to="/countries">
-            <img
-             className="country"
-             src="https://i.imgur.com/UZYfLHH.png"
-             alt="country"
-            />
-        </Link>
+      <Link to="/countries">
+        <img
+          className="country"
+          src="https://i.imgur.com/UZYfLHH.png"
+          alt="country"
+        />
+      </Link>
 
-        <Link to="/categories">
-          <img
-            className="category"
-            src="https://i.imgur.com/bZI9mIe.png"
-            alt="catergory"
-          />
-        </Link>
+      <Link to="/categories">
+        <img
+          className="category"
+          src="https://i.imgur.com/bZI9mIe.png"
+          alt="catergory"
+        />
+      </Link>
     </nav>
   );
 }

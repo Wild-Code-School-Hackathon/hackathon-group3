@@ -20,10 +20,6 @@ class RandomCam extends Component {
     this.timerID = setInterval(() => this.getRandomCam(), 20000);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
-
   getRandomCam = () => {
     const i = randomNum(100);
     const url =
@@ -58,18 +54,19 @@ class RandomCam extends Component {
       });
   };
 
-  render() {
-    const { randomCam } = this.state;
-    return (
-      <div className='randomcam-container'>
-        <h3>Random Cam</h3>
-        <iframe src={randomCam} title='random cam' allow='autoplay' />
-        <Link to='/WebcamPage'>
-          <button>go to radom cam</button>
-        </Link>
-      </div>
-    );
-  }
+    render() {
+        const { randomCam, randomCamId } = this.state;
+        console.log(randomCamId)
+        return(
+            <div>
+              <h3>Random Cam</h3>
+                <iframe src={randomCam} title='random cam' allow='autoplay'/>
+              <Link to="/WebcamPage">
+                <button>go to radom cam</button>
+              </Link>     
+            </div>
+        );
+    } 
 }
 
 export default RandomCam;

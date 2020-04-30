@@ -8,14 +8,10 @@ function Homepage() {
       <div className='home-bg-img'></div>
       <div className='home-card-container'>
         <Link to='/countries' className='home-countries'>
-          <div>
-            <h3>Countries</h3>
-          </div>
+          <h3>Countries</h3>
         </Link>
         <Link to='/categories' className='home-categories'>
-          <div>
-            <h3>Categories</h3>
-          </div>
+          <h3>Categories</h3>
         </Link>
       </div>
       <RandomCam />

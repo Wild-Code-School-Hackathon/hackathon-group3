@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 
 
 function CamsList(props) {
-    const { name, id, selectCam } = props
-    console.log(name)
+    const { name, id, selectCam, image } = props
     return (
-        <div>
-            <p onClick={() => selectCam(id)}><Link to='/webcamPage'>{name}</Link></p>
+        <div className='cam-list-card' onClick={() => selectCam(id)}>
+            <Link to='/webcamPage'>
+              <img src={image} alt={name}/>
+              <p>{name}</p>
+            </Link>
         </div>
     )
 }

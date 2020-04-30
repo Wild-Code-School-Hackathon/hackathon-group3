@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function randomNum(num) {
   return Math.floor(Math.random() * num);
@@ -11,7 +11,6 @@ class RandomCam extends Component {
     super(props);
     this.state = {
       randomCam: '',
-      randomCamId: '',
     };
   }
 
@@ -38,7 +37,6 @@ class RandomCam extends Component {
               ].id
           )
           .then((camId) => {
-            this.setState({ randomCamId: camId });
             const url = `https://api.windy.com/api/webcams/v2/list?show=webcams:player;webcam=${camId}&key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym`;
             axios
               .get(url)

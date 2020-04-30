@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 function Homepage() {
   return (
     <div className='home-container'>
-      <div className='home-bg-img'></div>
+      <div className='home-bg-img'>
+        <h1>Couch Flight</h1>
+      </div>
       <div className='home-card-container'>
         <Link to='/countries' className='home-countries'>
           <h3>Countries</h3>

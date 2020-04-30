@@ -3,29 +3,23 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="Nav">
-      <Link to="/">
+    <nav className='Nav'>
+      <Link to='/'>
         <img
-          className="logo"
-          src="https://i.imgur.com/Ztx2I7m.png"
-          alt="logo"
+          className='logo'
+          src='https://i.imgur.com/E0dSgwX.png'
+          alt='logo'
         />
       </Link>
-        <Link to="/countries">
-            <img
-             className="country"
-             src="https://i.imgur.com/UZYfLHH.png"
-             alt="country"
-            />
+      <div className='nav-items'>
+        <Link to='/countries'>
+          <h4>Countries</h4>
         </Link>
 
-        <Link to="/categories">
-          <img
-            className="category"
-            src="https://i.imgur.com/bZI9mIe.png"
-            alt="catergory"
-          />
+        <Link to='/categories'>
+          <h4>Categories</h4>
         </Link>
+      </div>
     </nav>
   );
 }

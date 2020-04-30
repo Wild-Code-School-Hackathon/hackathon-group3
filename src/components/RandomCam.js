@@ -54,18 +54,18 @@ class RandomCam extends Component {
       });
   };
 
-  
-
-    render() {
-        const { randomCam } = this.state;
-        return(
-            <div>
-              <h3>Random Cam</h3>
-                <iframe src={randomCam} title='random cam' allow='autoplay'/>
-                <button onClick={this.selectCam}><Link to="/WebcamPage">go to radom cam</Link></button>
-            </div>
-        );
-    } 
+  render() {
+    const { randomCam } = this.state;
+    return (
+      <div className='random-cam'>
+        <h3 className='rc-text'>Random Cam</h3>
+        <iframe src={randomCam} title='random cam' allow='autoplay' />
+        <button onClick={this.selectCam}>
+          <Link to='/WebcamPage'>go to radom cam</Link>
+        </button>
+      </div>
+    );
+  }
 }
 
 export default RandomCam;

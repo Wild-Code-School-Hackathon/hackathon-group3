@@ -31,7 +31,7 @@ class Countries extends Component {
   }
 
   getCamsList = (countryId) => {
-    const url = `https://api.windy.com/api/webcams/v2/list/country=${countryId}?key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym`;
+    const url = `https://api.windy.com/api/webcams/v2/list/country=${countryId}?show=webcams:image,location&key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym`;
     if (countryId !== 'default') {
       axios
         .get(url)
@@ -55,17 +55,26 @@ class Countries extends Component {
 
   render() {
     const { countriesList, camsList } = this.state;
+    console.log(camsList)
     return (
       <div>
-        <div>Countries Page</div>
-        <DropDown
-          optionsList={countriesList}
-          handleChange={this.handleChange}
-        />
-        {camsList.map((cam) => (
-          <CamsList key={cam.id} name={cam.title} id={cam.id} selectCam={this.selectCam} />
-        ))}
-        <h3>Suggested Countries</h3>
+          <div className='dropdown-country-bg'>
+            <DropDown
+              optionsList={countriesList}
+              handleChange={this.handleChange}
+            />
+          </div>
+        {camsList.length !== 0 && <h3 className='cams-list-title'>Cams List</h3>}
+        <div className='cams-list-wrapper'>
+          {camsList.map((cam) => (
+            <CamsList key={cam.id}
+              name={cam.title}
+              image={cam.image.current.thumbnail}
+              id={cam.id}
+              selectCam={this.selectCam} />
+          ))}
+        </div>
+        <h3 className='suggested-title'>Suggested Countries</h3>
         <div className='cards-wrapper'>
           <div className="card">
             <img
@@ -74,6 +83,7 @@ class Countries extends Component {
               alt="South Africa"
               onClick={() => this.getCamsList('ZA')}
             />
+            <h3 className='card-title'>South Africa</h3>
           </div>
 
           <div className="card">
@@ -83,6 +93,7 @@ class Countries extends Component {
               alt="Japan"
               onClick={() => this.getCamsList('JP')}
             />
+            <h3 className='card-title'>Japan</h3>
           </div>
 
           <div className="card">
@@ -92,6 +103,7 @@ class Countries extends Component {
               alt="Portugal"
               onClick={() => this.getCamsList('PT')}
           />
+          <h3 className='card-title'>Portugal</h3>
           </div>
           <div className="card">
             <img
@@ -100,6 +112,7 @@ class Countries extends Component {
               alt="Brazil"
               onClick={() => this.getCamsList('BR')}
             />
+            <h3 className='card-title'>Brazil</h3>
           </div>
           <div className="card">
             <img
@@ -108,6 +121,7 @@ class Countries extends Component {
               alt="New Zealand"
               onClick={() => this.getCamsList('NZ')}
             />
+            <h3 className='card-title'>New Zeland</h3>
           </div>
           <div className="card">
             <img
@@ -116,6 +130,7 @@ class Countries extends Component {
               onClick={() => this.getCamsList('TH')}
               alt="Thailand"
             />
+            <h3 className='card-title'>Thailand</h3>
           </div>
         </div>
       </div>

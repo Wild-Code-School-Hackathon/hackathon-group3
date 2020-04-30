@@ -25,10 +25,10 @@ class WebcamPage extends React.Component {
         const { camInfo } = this.state;
         console.log(camInfo)
         return (
-            <div>
-                <h3>{camInfo.title}</h3>
+            <div className='webcamPage-container'>
+                <h3>Cam: {camInfo.title}</h3>
                {camInfo.location && 
-               <h3>{`${camInfo.location.city}, ${camInfo.location.country}`}</h3>}
+               <h3>{`Location: ${camInfo.location.city}, ${camInfo.location.country}`}</h3>}
                {camInfo.player &&
                  <iframe src={camInfo.player.lifetime.embed} title={camInfo.title}/>
                }

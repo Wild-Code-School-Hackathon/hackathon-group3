@@ -8,7 +8,6 @@ class Countries extends Component {
     super(props);
     this.state = {
       countriesList: [],
-      selectedCountry: '',
       camsList: [],
     };
   }
@@ -28,7 +27,6 @@ class Countries extends Component {
 
   handleChange = (event) => {
     const { value } = event.target;
-    this.setState({ selectedCountry: value });
     this.getCamsList(value);
   };
 
@@ -45,7 +43,7 @@ class Countries extends Component {
   };
 
   render() {
-    const { countriesList, selectedCountry, camsList } = this.state;
+    const { countriesList, camsList } = this.state;
 
     return (
       <div>

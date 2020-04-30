@@ -3,26 +3,26 @@ import axios from 'axios';
 import DropDown from './DropDown';
 import CamsList from './CamsList';
 
-
 class Countries extends Component {
   constructor(props) {
     super(props);
     this.state = {
       countriesList: [],
       camsList: [],
-    }
+    };
   }
 
   componentDidMount() {
-    const url = 'https://api.windy.com/api/webcams/v2/list?show=countries&key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym'
+    const url =
+      'https://api.windy.com/api/webcams/v2/list?show=countries&key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym';
     axios
       .get(url)
       .then((response) => response.data.result.countries)
       .then((countriesData) => {
-        const defaultOpt = { id: 'default', name: 'Please chose a country' }
-        const updatedCountries = [defaultOpt, ...countriesData]
-        this.setState({ countriesList: updatedCountries })
-      })
+        const defaultOpt = { id: 'default', name: 'Please choose a country' };
+        const updatedCountries = [defaultOpt, ...countriesData];
+        this.setState({ countriesList: updatedCountries });
+      });
   }
 
   handleChange = (event) => {
@@ -36,13 +36,11 @@ class Countries extends Component {
       axios
         .get(url)
         .then((response) => response.data.result.webcams)
-        .then((camsData) =>
-          this.setState({ camsList: camsData })
-        )
+        .then((camsData) => this.setState({ camsList: camsData }));
     } else {
-      this.setState({ camsList: [] })
+      this.setState({ camsList: [] });
     }
-  }
+  };
 
   render() {
     const { countriesList, camsList } = this.state;
@@ -50,14 +48,11 @@ class Countries extends Component {
       <div>
         <div>Countries Page</div>
         <DropDown
-          countriesList={countriesList}
+          optionsList={countriesList}
           handleChange={this.handleChange}
         />
-        {camsList.map(cam => (
-          <CamsList
-            key={cam.id}
-            name={cam.title}
-          />
+        {camsList.map((cam) => (
+          <CamsList key={cam.id} name={cam.title} />
         ))}
         <h3>Suggested Countries</h3>
         <div className='cards-wrapper'>

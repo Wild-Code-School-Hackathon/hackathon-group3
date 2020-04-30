@@ -61,5 +61,3 @@ class Categories extends Component {
 }
 
 export default Categories;
-
-// beach mountain city forest island lake

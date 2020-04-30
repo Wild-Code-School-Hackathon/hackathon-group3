@@ -23,10 +23,6 @@ componentDidMount() {
       );
 }
 
-componentWillUnmount() {
-    clearInterval(this.timerId);
-}
-
 getRandomCam = () => {
     const i = randomNum(100)
     const url = 'https://api.windy.com/api/webcams/v2/list?show=countries&key=EjDBdKjXSKLRgpbFwOcQh2N6MbS8S3Ym'
@@ -54,7 +50,8 @@ getRandomCam = () => {
 
 
     render() {
-        const { randomCam } = this.state;
+        const { randomCam, randomCamId } = this.state;
+        console.log(randomCamId)
         return(
             <div>
               <h3>Random Cam</h3>

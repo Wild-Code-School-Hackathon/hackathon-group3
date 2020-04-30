@@ -7,7 +7,7 @@ function Navbar() {
       <Link to="/">
         <img
           className="logo"
-          src="https://i.imgur.com/ZXdCWLR.png"
+          src="https://i.imgur.com/Ztx2I7m.png"
           alt="logo"
         />
       </Link>
